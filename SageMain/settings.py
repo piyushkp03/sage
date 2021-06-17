@@ -29,7 +29,7 @@ SECRET_KEY = 'pl-l5m)bl#uhtg^c!9ehaahrz8b3r)iesls09vb3jdj6l!oq4('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','sagevaccine.herokuapp.com']
 
 
 # Application definition
