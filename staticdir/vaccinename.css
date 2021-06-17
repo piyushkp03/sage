@@ -1,0 +1,38 @@
+html {
+  background-color: #cbf1f5;
+}
+.fa-canadian-maple-leaf {
+  color: #1fab89;
+}
+.headnav {
+  color: #1fab89;
+  font-family: "Cinzel", serif;
+}
+.nav-link {
+  text-decoration: none;
+  color: #1fab89 !important;
+}
+.nav-link:hover {
+  background-color: #cbf1f5;
+  color: #1fab89;
+}
+.carousel-item {
+  width: 100%;
+  height: 20rem;
+  margin-bottom: 50px;
+}
+.mainimg2 {
+  height: 50rem;
+}
+.fa-map-marker-alt {
+  color: #1fab89;
+  margin: 10px 40%;
+}
+.nowat {
+  margin-bottom: 10px;
+  background-color: #cbf1f5;
+}
+.fa-plane-arrival {
+  color: #1fab89;
+  margin: 10px 40%;
+}

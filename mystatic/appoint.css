@@ -1,0 +1,24 @@
+html {
+  background-color: #cbf1f5;
+}
+.appo {
+  background-color: #cbf1f5;
+}
+.headnav {
+  color: #1fab89;
+  font-family: "Cinzel", serif;
+}
+.nav-link {
+  text-decoration: none;
+  color: #1fab89 !important;
+}
+.nav-link:hover {
+  background-color: #cbf1f5;
+  color: #1fab89;
+}
+.fa-canadian-maple-leaf {
+  color: #1fab89;
+}
+/* .dropdown {
+  padding: 0% 50%;
+} */

@@ -1,0 +1,285 @@
+{% load static %}
+{% url 'sortname' as sortname %}
+{% url 'sortdis' as sortdis %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="{% static 'styles.css' %}" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="{% static 'favicon.ico' %}">
+
+  <!-- font awesome-->
+  <script src="https://kit.fontawesome.com/629e0ab30d.js" crossorigin="anonymous"></script>
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@620&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <!-- title -->
+
+
+
+  <title>Sage</title>
+  <style>
+    .modal-content {
+      background-color: #cffcf7;
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+
+  {% for message in messages %}
+  <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <form action="signup" method="post">
+            {% csrf_token %}
+
+            <a class="navbar-brand" href="#"><i class="fab fa-canadian-maple-leaf"></i>
+              <!-- <i class="fas fa-cannabis"></i> -->
+              <span class="headnav">Sage</span></a><br>
+            <h5 class="modal-title" id="exampleModalLabel">Register<br><br></h5>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Uname</label>
+              <input type="text" name="uname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="pass" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+              <input type="password" name="cnfpass" class="form-control" id="exampleInputPassword1" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Signup</button>
+          </form>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- Modal -->
+
+
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <form method="post" action="login1">
+            {% csrf_token %}
+            <a class="navbar-brand" href="#"><i class="fab fa-canadian-maple-leaf"></i>
+              <!-- <i class="fas fa-cannabis"></i> -->
+              <span class="headnav">Sage</span></a><br>
+            <h5 class="modal-title" id="exampleModalLabel">Login<br><br></h5>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Username</label>
+              <input type="text" name="uname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                required>
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="passw" class="form-control" id="exampleInputPassword1" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class=" container-fluid">
+      <a class="navbar-brand" href="#"><i class="fab fa-canadian-maple-leaf"></i>
+        <!-- <i class="fas fa-cannabis"></i> -->
+        <span class="headnav">Sage</span></a>
+
+
+      <div class="btn-group"> <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <img src="{% static 'img.png' %}" style="height:20px; width:20px;">
+        </button>
+        <div class="dropdown-menu">
+
+          <a class="dropdown-item" href="{{sortname}}{{hosp}}">Sort By Name</a>
+          <a class="dropdown-item">{{sortname}}{{hosp}}</a>
+          <a class="dropdown-item" href="{{sortdis}}{{hosp}}">Sort By Distance</a>
+
+        </div>
+      </div>
+
+
+
+
+
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'home' %}">Home</a>
+          </li>
+          {% if user.is_authenticated %}
+          <!-- Example single danger button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              {{user}}
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'urapp' %}">Your Appointments</a>
+              <a class="dropdown-item" href="{% url 'logoutuser'  %}">Logout</a>
+
+            </div>
+          </div>
+
+
+          {% else %}
+          <li class="nav-item">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal1" class="nav-link" href="#">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-link" href="#">Sign up</a>
+          </li>
+          {% endif %}
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'aboutus' %}">About us</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <section>
+    {% for hospital in hdetail %}
+    <div class="row no-gutters  position-relative nowat">
+      <div class="col-sm-3 mb-md-0 p-md-4">
+        <img src="/media/{{hospital.himage}}" class="w-100" alt="...">
+      </div>
+      <div class="col-sm-8 position-static p-4 pl-md-0">
+        <h2 id="hname" class="mt-0">{{hospital.hname}}</h2>
+        <h6 class="mt-0">{{hospital.haddr}}</h6>
+        Direction: <a href="{{hospital.hlink}}"><img src="{% static 'dir.jpeg' %}" alt="directions"
+            style="height:30px; width:30px;"> </a>
+        <h5>Timing </h5>{{hospital.htiming}}
+        <h5>Closed: {{hospital.hclosed}}</h5>
+
+        <form method="post" action="appoint">
+          {% csrf_token %}
+
+          <input type="hidden" name="hidd" id="hid" value="{{hospital.htiming}}">
+          <button type="submit" onclick="myFunction('{{hospital.hname}}','Wizard')" class="btn btn-primary">Book
+            Appointment</button>
+
+
+        </form>
+
+
+
+
+      </div>
+    </div>
+    {% endfor %}
+
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
+
+<!--
+  {% for hospital in hdetail %}
+ <div class="row no-gutters  position-relative nowat">
+      <div class="col-sm-3 mb-md-0 p-md-4">
+        <img src="/media/{{hospital.himage}}" class="w-100" alt="...">
+      </div>
+      <div class="col-sm-8 position-static p-4 pl-md-0">
+        <h2 class="mt-0">{{hospital.hname}}</h2>
+        <h6 class="mt-0">{{hospital.haddr}}</h6>
+       Direction:  <a href="https://{{hospital.hlink}}" ><img src="{% static 'dir.jpeg' %}" alt="directions" style="height:30px; width:30px;"> </a>
+      <h5>Timing </h5>{{hospital.htiming}}
+        <h5>Closed </h5>{{hospital.hclosed}}
+
+
+      </div>
+ </div>
+{% endfor %}
+
+-->
