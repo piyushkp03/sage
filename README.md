@@ -8,7 +8,7 @@ SAGE is a Vaccination website where people can make an appointment for vaccinati
 [SAGE](https://sagevaccine.herokuapp.com/)
 
 
-## Demo
+## Demo Video
 
 [![SAHE](https://img.youtube.com/vi/_wLSx-LNSkg/0.jpg)](https://www.youtube.com/watch?v=_wLSx-LNSkg)
 
