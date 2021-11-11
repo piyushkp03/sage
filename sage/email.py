@@ -4,7 +4,7 @@ import smtplib
 from .models import noti
 
 def send_email():
-    email_user = 'teproject69@gmail.com'
+    email_user = 'pyuskpandey03@gmail.com'
     server = smtplib.SMTP ('smtp.gmail.com', 587)
     server.starttls()
     server.login(email_user, 'email pass')
